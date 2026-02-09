@@ -1,0 +1,21 @@
+{
+  "frontend/src/App.tsx": "Main application component orchestrating the South Essentials ecommerce storefront with navigation, hero, categories, products, cart, and contact sections, integrated with cart state management.",
+  "frontend/src/components/Layout.tsx": "Simple layout wrapper component that provides consistent structure for the main content area.",
+  "frontend/src/components/TopNav.tsx": "Fixed navigation bar with South Essentials branding, smooth-scroll links to storefront sections (Categories, Products, Contact), shopping cart icon with item count badge, and responsive mobile menu.",
+  "frontend/src/components/Hero.tsx": "Full-screen hero section featuring South Essentials brand name, tagline \"your one stop shop for south indian products\", Shop Products CTA, and scroll indicator with South Indian temple background.",
+  "frontend/src/components/scrollToSection.ts": "Utility function that performs smooth scrolling to page sections by ID with offset compensation for the fixed header.",
+  "frontend/src/components/sections/AboutSection.tsx": "About section component displaying the updated bio paragraphs alongside a professional photo in a responsive two-column grid layout with rounded corners and shadow styling.",
+  "frontend/src/components/sections/ServicesSection.tsx": "Services section component rendering a grid of service cards with icons, titles, and descriptions using shadcn Card components.",
+  "frontend/src/components/sections/SamplesSection.tsx": "Writing samples section displaying portfolio pieces with language badges, descriptions, and optional external links using Card and Badge components.",
+  "frontend/src/components/sections/ContactSection.tsx": "Contact section with South Essentials support information (email, phone, location) displayed in a card layout with icons and email CTA button.",
+  "frontend/src/content/portfolioContent.ts": "Centralized content data module containing all editable copy for About (updated with new two-paragraph bio), Services, and Contact sections (updated with phone 9650372698 and email corp.hari@gmail.com).",
+  "frontend/src/index.css": "Global styles with South Indian inspired OKLCH color palette (temple gold/saffron primary, terracotta secondary), custom font imports (Playfair Display serif, Inter sans), and smooth scrolling configuration.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with Playfair Display serif and Inter sans font families, South Indian inspired color tokens matching the OKLCH design system.",
+  "frontend/index.html": "HTML entry point with South Essentials SEO metadata, Open Graph tags, Twitter cards, page title including the exact tagline, and favicon reference.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for future React Query hooks; currently empty as backend has no data operations.",
+  "frontend/src/components/sections/FeaturedCategoriesSection.tsx": "Featured categories section displaying four South Indian product categories (temples, silk sarees, snacks, dance) in a responsive grid with images and descriptions using Card components.",
+  "frontend/src/components/sections/ProductsSection.tsx": "Products section rendering a grid of products from static data with images, prices, descriptions, category badges, and Add to Cart buttons using Card components.",
+  "frontend/src/components/sections/CartSection.tsx": "Shopping cart section displaying cart items with quantity controls, remove actions, order summary with subtotal, and placeholder checkout button using Card components.",
+  "frontend/src/content/storefrontData.ts": "Static storefront data models and seed data defining four categories (temples, sarees, snacks, dance) and eight products with names, prices, images, and descriptions.",
+  "frontend/src/hooks/useCart.ts": "Client-side cart state management hook providing add, remove, quantity update, subtotal calculation, and item count functions without persistence or backend integration."
+}

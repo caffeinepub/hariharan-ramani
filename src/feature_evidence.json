@@ -1,0 +1,89 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-replace-the-current-portfolio-site-branding-and-homepage-structure-with-an-ecommerce-storefront-for-the-brand-south-essentials-using-the-tagline-exactly-your-one-stop-shop-for-south-indian-products-update-all-prominent-user-facing-branding-top-navigation-brand-text-hero-heading-wordmark-text-primary-cta-text-to-reflect-south-essentials-and-the-tagline-and-remove-replace-portfolio-specific-content-hariharan-ramani-writer-focused-copy-services-about-writer-bio-so-the-site-reads-as-a-shop-homepage",
+      "featureTitle": "Replace the current portfolio site branding and homepage structure with an ecommerce storefront for the brand \"South Essentials\", using the tagline exactly: \"your one stop shop for south indian products\".\n\nUpdate all prominent user-facing branding (top navigation brand text, hero heading/wordmark text, primary CTA text) to reflect \"South Essentials\" and the tagline, and remove/replace portfolio-specific content (\"Hariharan Ramani\", writer-focused copy, services/about writer bio) so the site reads as a shop homepage.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Hero.tsx",
+        "frontend/src/components/TopNav.tsx",
+        "frontend/src/components/sections/ContactSection.tsx",
+        "frontend/src/content/portfolioContent.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-simple-static-ecommerce-browsing-experience-no-external-payments-on-a-single-page-react-ui-including-a-featured-categories-or-equivalent-section-that-highlights-south-indian-temples-silk-sarees-south-indian-snacks-and-traditional-south-indian-dance-forms-a-products-section-that-lists-a-small-default-set-of-products-static-data-stored-in-a-frontend-content-data-file-with-name-price-image-and-category-a-client-side-cart-local-state-allowing-add-remove-items-and-showing-quantity-and-subtotal-a-checkout-action-that-is-clearly-labeled-as-a-placeholder-e-g-checkout-coming-soon-and-does-not-integrate-any-payment-provider-update-navigation-links-to-scroll-to-the-new-storefront-sections",
+      "featureTitle": "Implement a simple, static ecommerce browsing experience (no external payments) on a single-page React UI, including:\n- A “Featured Categories” (or equivalent) section that highlights: South Indian temples, silk sarees, South Indian snacks, and traditional South Indian dance forms.\n- A “Products” section that lists a small default set of products (static data stored in a frontend content/data file) with name, price, image, and category.\n- A client-side cart (local state) allowing add/remove items and showing quantity and subtotal.\n- A checkout action that is clearly labeled as a placeholder (e.g., “Checkout (Coming Soon)”) and does not integrate any payment provider.\n\nUpdate navigation links to scroll to the new storefront sections.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/TopNav.tsx",
+        "frontend/src/components/sections/CartSection.tsx",
+        "frontend/src/components/sections/FeaturedCategoriesSection.tsx",
+        "frontend/src/components/sections/ProductsSection.tsx",
+        "frontend/src/content/storefrontData.ts",
+        "frontend/src/hooks/useCart.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-generate-and-include-default-themed-images-representing-south-indian-temples-silk-sarees-south-indian-snacks-and-traditional-south-indian-dance-forms-store-these-images-under-frontend-public-assets-generated-and-use-them-as-category-and-or-hero-imagery-in-the-storefront-ui-no-backend-image-routing",
+      "featureTitle": "Generate and include default themed images representing: South Indian temples, silk sarees, South Indian snacks, and traditional South Indian dance forms. Store these images under frontend/public/assets/generated and use them as category and/or hero imagery in the storefront UI (no backend image routing).",
+      "files": [
+        "frontend/src/components/Hero.tsx",
+        "frontend/src/components/sections/FeaturedCategoriesSection.tsx",
+        "frontend/src/content/storefrontData.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-basic-seo-and-sharing-metadata-in-frontend-index-html-to-match-the-new-storefront-branding-title-should-include-south-essentials-description-should-describe-the-storefront-in-english-and-include-the-tagline-text-update-open-graph-and-twitter-metadata-to-match-the-new-title-description",
+      "featureTitle": "Update basic SEO and sharing metadata in frontend/index.html to match the new storefront branding:\n- Title should include \"South Essentials\".\n- Description should describe the storefront in English and include the tagline text.\n- Update Open Graph and Twitter metadata to match the new title/description.",
+      "files": [
+        "frontend/index.html"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

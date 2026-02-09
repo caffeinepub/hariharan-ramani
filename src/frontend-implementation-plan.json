@@ -1,0 +1,151 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "South Essentials single-page ecommerce storefront conversion (static catalog + cart)",
+  "requirements": [
+    {
+      "id": "REQ-13",
+      "summary": "Rebrand the portfolio homepage into a South Essentials storefront with the exact tagline and remove writer/portfolio positioning.",
+      "acceptanceCriteria": [
+        "The hero section displays the brand name \"South Essentials\" and the tagline exactly as provided.",
+        "The top navigation no longer shows \"Hariharan Ramani\" or any writer/portfolio wording.",
+        "The page no longer presents writer portfolio sections (writer-focused About/Services copy) and instead presents storefront-style content sections appropriate for an ecommerce homepage."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/TopNav.tsx",
+          "operation": "modify",
+          "description": "Update brand text to \"South Essentials\" (remove Hariharan Ramani wording and any HR-specific logo usage) and replace nav links with storefront section anchors (e.g., Categories, Products, Cart, Contact). Ensure clicks continue to use smooth scrolling via scrollToSection. Use shadcn-ui Button for nav items where appropriate; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "modify",
+          "description": "Replace writer wordmark/subheading with storefront hero content: show \"South Essentials\" and the tagline exactly \"your one stop shop for south indian products\"; update primary CTA text to a storefront action (e.g., \"Shop Products\") and wire it to scroll to the Products section. Replace background imagery to storefront hero asset (wired in REQ-15). Use shadcn-ui Button for CTA; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Replace the portfolio page structure (About/Services) with storefront sections (Featured Categories, Products, Cart/Checkout), while keeping a single-page layout. Ensure TopNav anchors match section IDs, and remove all writer/portfolio-specific composition from the main content."
+        },
+        {
+          "path": "frontend/src/components/sections/ContactSection.tsx",
+          "operation": "modify",
+          "description": "Update contact section wording from writer-focused copy (\"Get in Touch\", collaboration text) to storefront support/contact wording suitable for an ecommerce homepage. Keep section id=\"contact\" for nav scrolling. Use existing shadcn-ui Card/Button patterns; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/content/portfolioContent.ts",
+          "operation": "modify",
+          "description": "Replace portfolio-specific static content (writer bio, services) with storefront-appropriate static content used by the homepage (e.g., brief brand blurb/support contact details), or deprecate unused fields so no writer branding remains in the UI."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Add a static storefront browsing experience with featured categories, product list from static data, and a client-side cart with placeholder checkout; update nav scrolling.",
+      "acceptanceCriteria": [
+        "Users can scroll via the top nav to the new ecommerce sections (categories, products, cart/checkout, and any remaining footer/contact if present).",
+        "At least one default product is shown for each requested category, backed by static frontend data.",
+        "Users can add products to a cart, adjust/remove them, and see subtotal updates without page refresh.",
+        "No third-party payment integration is present; checkout is explicitly a placeholder."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/content/storefrontData.ts",
+          "operation": "create",
+          "description": "Add static storefront data models and seed data: the four required categories and a small set of products including name, price, image path, and category (at least one product per required category). Image paths must reference the generated assets wired in REQ-15."
+        },
+        {
+          "path": "frontend/src/hooks/useCart.ts",
+          "operation": "create",
+          "description": "Implement a small client-side cart hook (local React state) supporting add, remove, quantity adjust, and subtotal calculation; no persistence and no backend/payment integration."
+        },
+        {
+          "path": "frontend/src/components/sections/FeaturedCategoriesSection.tsx",
+          "operation": "create",
+          "description": "Create a \"Featured Categories\" section (id=\"categories\") highlighting: South Indian temples, silk sarees, South Indian snacks, traditional South Indian dance forms. Render category cards using shadcn-ui Card/Button (or Card alone) for consistent styling; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/sections/ProductsSection.tsx",
+          "operation": "create",
+          "description": "Create a Products section (id=\"products\") that renders products from frontend/src/content/storefrontData.ts, showing name, price, image, category, and an \"Add to cart\" action. Use shadcn-ui Card/Button for product tiles/actions; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/sections/CartSection.tsx",
+          "operation": "create",
+          "description": "Create a Cart section (id=\"cart\") showing cart line items with quantity controls, remove action, and subtotal. Include a clearly labeled placeholder checkout action such as \"Checkout (Coming Soon)\" with no integrations. Use shadcn-ui Card/Button for layout/actions; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire FeaturedCategoriesSection, ProductsSection, and CartSection into the single-page layout in a storefront order. Connect ProductsSection and CartSection to the shared cart state (via useCart hook) so add/remove/quantity/subtotal updates happen client-side without refresh."
+        },
+        {
+          "path": "frontend/src/components/TopNav.tsx",
+          "operation": "modify",
+          "description": "Ensure nav links scroll to the new section IDs: categories, products, cart, contact (and hero via brand click). Keep mobile menu behavior consistent. Use shadcn-ui Button for nav items; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Add the required default generated themed images under frontend/public/assets/generated and reference them in the hero and category UI (no backend image routing).",
+      "acceptanceCriteria": [
+        "All required new images exist under frontend/public/assets/generated and are referenced via /assets/generated/... paths in the UI.",
+        "Each of the four requested themes is visually represented on the homepage.",
+        "No backend endpoints are used to serve or transform images."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/south-temple-hero.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Add generated image asset for hero: South Indian temple exterior in warm daylight, wide banner composition."
+        },
+        {
+          "path": "frontend/public/assets/generated/silk-sarees-category.dim_1200x800.png",
+          "operation": "create",
+          "description": "Add generated image asset for category: silk saree textile close-up with rich colors and traditional patterns."
+        },
+        {
+          "path": "frontend/public/assets/generated/south-snacks-category.dim_1200x800.png",
+          "operation": "create",
+          "description": "Add generated image asset for category: assorted South Indian snacks arranged on banana leaf / traditional plating."
+        },
+        {
+          "path": "frontend/public/assets/generated/south-dance-category.dim_1200x800.png",
+          "operation": "create",
+          "description": "Add generated image asset for category: traditional South Indian dance form performance scene with expressive pose and costume."
+        },
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "modify",
+          "description": "Update hero background image reference to frontend/public/assets/generated/south-temple-hero.dim_1920x1080.png (served as a static asset). Ensure hero still renders \"South Essentials\" and the exact tagline. Use shadcn-ui Button for CTA; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/content/storefrontData.ts",
+          "operation": "modify",
+          "description": "Reference the generated category images using /assets/generated paths for the four categories: /assets/generated/silk-sarees-category.dim_1200x800.png, /assets/generated/south-snacks-category.dim_1200x800.png, /assets/generated/south-dance-category.dim_1200x800.png, and /assets/generated/south-temple-hero.dim_1920x1080.png where appropriate."
+        },
+        {
+          "path": "frontend/src/components/sections/FeaturedCategoriesSection.tsx",
+          "operation": "modify",
+          "description": "Render category imagery using the generated assets for all four themes so each is visually represented on the homepage. Use shadcn-ui Card for image + label presentation; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "summary": "Update SEO/sharing metadata in frontend/index.html to match South Essentials storefront branding and include the exact tagline in the description.",
+      "acceptanceCriteria": [
+        "The HTML <title>, meta description, og:title/og:description, and twitter:title/twitter:description reflect \"South Essentials\" and an English storefront description including the tagline.",
+        "No remaining SEO metadata references \"Hariharan Ramani\" or writer/portfolio positioning."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Replace title/description/OG/Twitter metadata to use \"South Essentials\" and an English storefront description that includes the tagline exactly: \"your one stop shop for south indian products\". Remove or update any remaining references to Hariharan Ramani/writer portfolio positioning. Update favicon reference to avoid HR-branded favicon if it would conflict with the new storefront branding."
+        }
+      ]
+    }
+  ]
+}

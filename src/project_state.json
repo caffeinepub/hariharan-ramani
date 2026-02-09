@@ -1,0 +1,205 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 9,
+  "summary": "Ecommerce website for the brand \"South Essentials\" with the tagline \"your one stop shop for south indian products\", including default imagery showcasing South Indian temples, silk sarees, South Indian snacks, and traditional South Indian dance forms.",
+  "architectural_notes": [
+    "Update single-page layout to remove the Samples section and remove/adjust any navbar links or CTA scroll targets that reference Samples.",
+    "Place the user-uploaded image in the About section (not Contact), per user confirmation.",
+    "For South Essentials ecommerce site: include default images as static assets under frontend/public/assets/generated (or equivalent static assets path) and reference them directly in UI (no backend image routing)."
+  ],
+  "known_issues": [
+    "Build/configuration error prevented the requested content updates from being applied (site files still show old text)."
+  ],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- South Indian temple exterior in warm daylight, wide banner composition (south-temple-hero.dim_1920x1080.png)\n- Silk saree textile close-up with rich colors and traditional patterns (silk-sarees-category.dim_1200x800.png)\n- Assorted South Indian snacks arranged on banana leaf / traditional plating (south-snacks-category.dim_1200x800.png)\n- Traditional South Indian dance form performance scene with expressive pose and costume (south-dance-category.dim_1200x800.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-page-portfolio-website-homepage-that-prominently-displays-the-site-title-hariharan-ramani-and-the-subheading-multilingual-content-script-writer-hindi-tamil-english-in-the-hero-section",
+      "title": "Create a single-page portfolio website homepage that prominently displays the site title \"Hariharan Ramani\" and the subheading \"Multilingual Content & Script Writer (Hindi | Tamil | English)\" in the hero section.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-clear-editable-content-sections-suitable-for-showcasing-freelance-content-services-about-services-writing-scripting-samples-and-contact",
+      "title": "Add clear, editable content sections suitable for showcasing freelance content services: About, Services, Writing/Scripting Samples, and Contact.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-simple-navigation-experience-a-top-navigation-bar-with-links-that-scroll-to-about-services-samples-and-contact-and-a-primary-call-to-action-button-that-scrolls-to-contact",
+      "title": "Implement a simple navigation experience: a top navigation bar with links that scroll to About, Services, Samples, and Contact, and a primary call-to-action button that scrolls to Contact.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-visual-theme-colors-typography-spacing-and-component-styling-appropriate-for-a-professional-writer-portfolio-and-use-it-consistently-across-all-sections-and-components-avoid-blue-purple-as-the-primary-palette",
+      "title": "Apply a coherent visual theme (colors, typography, spacing, and component styling) appropriate for a professional writer portfolio, and use it consistently across all sections and components (avoid blue/purple as the primary palette).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-basic-seo-and-sharing-metadata-for-the-homepage-using-the-provided-site-title-and-subheading-page-title-and-description-in-english",
+      "title": "Add basic SEO and sharing metadata for the homepage using the provided site title and subheading (page title and description in English).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-include-the-required-generated-images-as-static-assets-under-frontend-public-assets-generated-and-use-them-in-the-ui-no-backend-image-routing",
+      "title": "Include the required generated images as static assets under frontend/public/assets/generated and use them in the UI (no backend image routing).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-entire-writing-scripting-samples-section-from-the-single-page-portfolio-ui-so-it-is-no-longer-rendered-or-reachable-via-scrolling",
+      "title": "Remove the entire Writing/Scripting Samples section from the single-page portfolio UI so it is no longer rendered or reachable via scrolling.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-top-navigation-to-remove-the-samples-link-so-the-navbar-only-includes-about-services-and-contact-links-while-keeping-the-existing-cta-behavior-to-contact",
+      "title": "Update the top navigation to remove the \"Samples\" link so the navbar only includes About, Services, and Contact links (while keeping the existing CTA behavior to Contact).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-samples-related-content-data-from-the-centralized-content-file-so-there-are-no-unused-samples-entries-left-after-the-section-is-removed",
+      "title": "Remove Samples-related content/data from the centralized content file so there are no unused samples entries left after the section is removed.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-existing-about-section-text-with-the-user-provided-bio-exactly-using-two-paragraphs-split-at-the-blank-line-and-remove-the-current-about-copy-from-the-centralized-content-source",
+      "title": "Replace the existing About section text with the user-provided bio exactly, using two paragraphs (split at the blank line) and remove the current About copy from the centralized content source.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-get-in-touch-contact-section-content-so-it-displays-the-user-s-phone-number-and-email-address-exactly-as-provided-replacing-the-placeholder-values",
+      "title": "Update the Get in Touch (Contact) section content so it displays the user’s phone number and email address exactly as provided, replacing the placeholder values.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-user-uploaded-photo-s-to-the-frontend-static-assets-and-render-a-photo-in-the-about-section-as-requested-with-appropriate-alt-text-sizing-and-responsive-layout",
+      "title": "Add the user-uploaded photo(s) to the frontend static assets and render a photo in the About section (as requested) with appropriate alt text, sizing, and responsive layout.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-portfolio-site-branding-and-homepage-structure-with-an-ecommerce-storefront-for-the-brand-south-essentials-using-the-tagline-exactly-your-one-stop-shop-for-south-indian-products-update-all-prominent-user-facing-branding-top-navigation-brand-text-hero-heading-wordmark-text-primary-cta-text-to-reflect-south-essentials-and-the-tagline-and-remove-replace-portfolio-specific-content-hariharan-ramani-writer-focused-copy-services-about-writer-bio-so-the-site-reads-as-a-shop-homepage",
+      "title": "Replace the current portfolio site branding and homepage structure with an ecommerce storefront for the brand \"South Essentials\", using the tagline exactly: \"your one stop shop for south indian products\".\n\nUpdate all prominent user-facing branding (top navigation brand text, hero heading/wordmark text, primary CTA text) to reflect \"South Essentials\" and the tagline, and remove/replace portfolio-specific content (\"Hariharan Ramani\", writer-focused copy, services/about writer bio) so the site reads as a shop homepage.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-simple-static-ecommerce-browsing-experience-no-external-payments-on-a-single-page-react-ui-including-a-featured-categories-or-equivalent-section-that-highlights-south-indian-temples-silk-sarees-south-indian-snacks-and-traditional-south-indian-dance-forms-a-products-section-that-lists-a-small-default-set-of-products-static-data-stored-in-a-frontend-content-data-file-with-name-price-image-and-category-a-client-side-cart-local-state-allowing-add-remove-items-and-showing-quantity-and-subtotal-a-checkout-action-that-is-clearly-labeled-as-a-placeholder-e-g-checkout-coming-soon-and-does-not-integrate-any-payment-provider-update-navigation-links-to-scroll-to-the-new-storefront-sections",
+      "title": "Implement a simple, static ecommerce browsing experience (no external payments) on a single-page React UI, including:\n- A “Featured Categories” (or equivalent) section that highlights: South Indian temples, silk sarees, South Indian snacks, and traditional South Indian dance forms.\n- A “Products” section that lists a small default set of products (static data stored in a frontend content/data file) with name, price, image, and category.\n- A client-side cart (local state) allowing add/remove items and showing quantity and subtotal.\n- A checkout action that is clearly labeled as a placeholder (e.g., “Checkout (Coming Soon)”) and does not integrate any payment provider.\n\nUpdate navigation links to scroll to the new storefront sections.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-include-default-themed-images-representing-south-indian-temples-silk-sarees-south-indian-snacks-and-traditional-south-indian-dance-forms-store-these-images-under-frontend-public-assets-generated-and-use-them-as-category-and-or-hero-imagery-in-the-storefront-ui-no-backend-image-routing",
+      "title": "Generate and include default themed images representing: South Indian temples, silk sarees, South Indian snacks, and traditional South Indian dance forms. Store these images under frontend/public/assets/generated and use them as category and/or hero imagery in the storefront UI (no backend image routing).",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-basic-seo-and-sharing-metadata-in-frontend-index-html-to-match-the-new-storefront-branding-title-should-include-south-essentials-description-should-describe-the-storefront-in-english-and-include-the-tagline-text-update-open-graph-and-twitter-metadata-to-match-the-new-title-description",
+      "title": "Update basic SEO and sharing metadata in frontend/index.html to match the new storefront branding:\n- Title should include \"South Essentials\".\n- Description should describe the storefront in English and include the tagline text.\n- Update Open Graph and Twitter metadata to match the new title/description.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a personal website showcasing freelance content services (site title: Hariharan Ramani; subheading: Multilingual Content & Script Writer (Hindi | Tamil | English))",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Remove the entire Writing/Scripting Samples section from the single-page portfolio site (including its navigation link/scroll target)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Replace the About section content with the provided updated bio/positioning text and remove the existing About text",
+      "reqIds": [],
+      "status": "in_progress"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Update the Get In Touch/Contact section to include phone number 9650372698 and email corp.hari@gmail.com",
+      "reqIds": [],
+      "status": "in_progress"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add the user-uploaded image to the About section",
+      "reqIds": [],
+      "status": "in_progress"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Set up an ecommerce website for the brand \"South Essentials\"",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Add default images themed around South Indian temples, silk sarees, South Indian snacks, and traditional South Indian dance forms",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Use the tagline \"your one stop shop for south indian products\" in the site hero/branding",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Connect the existing portfolio site to a custom domain: hariharanramani.com",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "South Essentials",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
